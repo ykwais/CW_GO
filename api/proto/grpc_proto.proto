@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.example.grpc;
+option go_package = "api/pb;pb";
+
+service Greeting {
+  rpc login(HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+  string login = 1;
+  string password = 2;
+}
+
+message HelloResponse {
+  string message = 1;
+}
